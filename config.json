@@ -8,8 +8,11 @@
   "includeFork": false,
   "theme": "dark.css",
   "types": [
-   "all"
+   "owner"
   ],
-  "linkedin": "luismiguelreis"
+  "linkedin": "luismiguelreis",
+  "twitter": null,
+  "medium": null,
+  "dribbble": null
  }
 ]

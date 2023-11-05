@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 2 — Iniciando O Projeto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 2 — Iniciando O Projeto</h1>
+      <h2 id="blog_sub_title">Neste artigo iremos configurar o nosso ambiente de desenvolvimento Node e Typescript.</h2>
+      <div id="blog">
+        <figure>
+          <img src="img_0.svg" alt="blog image 0" id="img_0_original">
+          <figcaption style="text-align: center;">Fonte: <a href="https://www.npmjs.com/package/ts-node" target="_blank" rel="noopener noreferrer">npmjs.com/package/ts-node</a></figcaption>
+        </figure>
+        <p id="para_3_original"></p>
+        <h2 class="normal">Primeiramente instalaremos o NodeJS Runtime para rodar arquivos Javascript sem precisar de um navegador.</h2>
+        <h2 class="normal">Link para download — <a href="https://nodejs.org/en/download" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download</a></h2> 
+        <h2>Iniciando um projeto Node</h2>
+        <h2 class="normal">A instalação do Node runtime, instala também o NPM, Node Package Manager, com o npm podemos gerenciar pacotes do NodeJS, iniciar novos projetos, instalar bibliotecas, e etc.</h2>
+        <h2 class="normal">Para iniciar um novo projeto usaremos um comando do npm no nosso terminal.</h2>
+        <figure>
+          <img src="img_1.png" alt="blog image 1" id="img_1_original">
+        </figure>
+        <h2 class="normal">Isso iniciará um novo projeto node e criará um arquivo package.json, nele temos nossas dependências, configurações e mais informações sobre nosso projeto.</h2>
+        <h2 class="normal">Agora podemos instalar o Typescript no nosso projeto como uma dependência.</h2>
+        <figure>
+          <img src="img_2.png" alt="blog image 2" id="img_2_original">
+        </figure>
+        <h2 class="normal">Explicando o comando acima:</h2>
+        i — Install / instalar a dependência.
+        <h2 class="normal">-D — Developer / instala a dependência como desenvolvedor.</h2>
+        <h2 class="normal">@types/node — Tipagens do Node pro Typescript.</h2>
+        <h2 class="normal">@tsconfig/node-lts — Configuração do Typescript pro Node-LTS.</h2>
+        <h2 class="normal">tsx — Dependência para rodar nosso arquivo Typescript sem compilar.</h2>
+        <h2>Configurando Typescript</h2>
+        <h2 class="normal">Agora configuraremos o nosso Typescript pro projeto, primeiramente criamos um arquivo tsconfig.json, e então digitaremos o seguinte.</h2>
+        <figure>
+          <img src="img_3.png" alt="blog image 3" id="img_3.png_original">
+        </figure>
+        <h2 class="normal">Explicando o codigo acima:</h2>
+        <h2 class="normal">extends — Isso extende uma configuração tsconfig, no caso a que instalamos antes.</h2>
+        <h2 class="normal">include — Define quais arquivos e pastas devemos compilar.</h2>
+        <h2>Configurando Nosso Script</h2>
+        <h2 class="normal">O NPM permite a execução de scripts sem precisar instalar através do NPX, mas antes de usar o NPX devemos configurar nosso package.json e criar um arquivo index.ts na nossa pasta src.</h2>
+        <figure>
+          <img src="img_4.png" alt="blog image 4" id="img_4.png_original">
+        </figure>
+        <h2 class="normal">Acima criamos um script para nosso ambiente de desenvolvimento, e um pro NPX.</h2>
+        <h2 class="normal">Agora colocaremos um código base pro NPX no nosso index.ts.</h2>
+        <figure>
+          <img src="img_5.png" alt="blog image 5" id="img_5.png_original">
+        </figure>
+        <h2 class="normal">E com isso terminamos a configuração do nosso projeto.</h2>
+        <h2 class="normal">Artigo no <a href="https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-2-iniciando-o-projeto-f4acf5222de5" target="_blank" rel="noopener noreferrer">Medium</a></h2>
+        <p></p>
+      </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee/gitfolio" target="_blank">Made With Gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

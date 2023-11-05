@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 7 — Criando Um Script NPX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 7 — Criando Um Script NPX</h1>
+      <h2 id="blog_sub_title">Neste artigo transformaremos nosso projeto em um script NPX, scripts npx podem ser utilizados sem a necessidade de instalação.</h2>
+      <div id="blog">
+        <figure>
+          <img src="img_0.webp" alt="blog image 0" id="img_0_original">
+          <figcaption style="text-align: center;">Fonte: <a href="https://kinsta.com/pt/base-de-conhecimento/npm-gerenciador-pacotes-node/" target="_blank" rel="noopener noreferrer">kinsta.com/pt/base-de-conhecimento/npm-gerenciador-pacotes-node/</a></figcaption>
+        </figure>
+        <p id="para_3_original"></p>
+        <h2>O que é NPX?</h2>
+        <h2 class="normal">NPX é um executor de pacotes NPM, que permite a execução do mesmo sem a necessidade de criar um novo projeto.</h2>
+        <h2 class="normal">Com isso usuários podem livremente utilizar nosso script para baixar sem necessidade de gerar um novo projeto, entretanto o mesmo deve ter instalado o NodeJS.</h2>
+        <h2 class="normal">Antes de tudo precisamos configurar nosso package.json para executar o arquivo index.js quando o NPX for chamado.</h2>
+        <figure>
+          <img src="img_1.png" alt="blog image 1" id="img_1_original">
+        </figure>
+        <h2 class="normal">Antes de construir nosso script vamos instalar o commander para simplificar a criação.</h2>
+        <figure>
+          <img src="img_2.png" alt="blog image 2" id="img_2_original">
+        </figure>
+        <h2 class="normal">Agora vamos completar nosso index.ts.</h2>
+        <figure>
+          <img src="img_3.png" alt="blog image 3" id="img_3_original">
+        </figure>
+        <h2 class="normal">Acima temos o nosso script inicial que chama os métodos de nossas classes, assim podemos chamar nosso script usando o seguinte código no terminal.</h2>
+        <figure>
+          <img src="img_4.png" alt="blog image 4" id="img_4_original">
+        </figure>
+        <h2 class="normal">Ou assim se caso quisermos baixar uma playlist.</h2>
+        <figure>
+          <img src="img_5.png" alt="blog image 5" id="img_5_original">
+        </figure>
+        <h2 class="normal">E assim terminamos nosso projeto de web scraping com NodeJS e Typescript.</h2>
+        <h2 class="normal">Artigo no <a href="https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-7-criando-um-script-npx-07feada147e0" target="_blank" rel="noopener noreferrer">Medium</a></h2>
+        <p></p>
+      </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee/gitfolio" target="_blank">Made With Gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

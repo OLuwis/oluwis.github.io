@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 3 — Investigando O Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 3 — Investigando O Website</h1>
+      <h2 id="blog_sub_title">Neste artigo investigaremos o site do SoundCloud para entendermos como funciona.</h2>
+      <div id="blog">
+        <figure>
+          <img src="img_0.webp" alt="blog image 0" id="img_0_original">
+          <figcaption style="text-align: center;">Fonte: <a href="https://kinsta.com/pt/blog/wordpress-debug/" target="_blank" rel="noopener noreferrer">kinsta.com/pt/blog/wordpress-debug/</a></figcaption>
+        </figure>
+        <p id="para_3_original"></p>
+        <h2 class="normal">Antes de começarmos a criar nosso scraper devemos entender como o website alvo funciona, no caso do SoundCloud, precisamos saber da onde ele retira os dados de uma determinada música, playlist ou usuário.</h2>
+        <h2>Inspecionar Elemento</h2>
+        <h2 class="normal">Se você conhece a internet sabe que muitas pessoas editam conteúdos como posts em redes sociais, títulos de videos no YouTube, e até notícias de jornais. Tudo isso possível através do inspecionar elemento, que permite a edição do HTML da página, mas, não é só pra isso que ele serve, ele também pode rastrear carregamentos externos e requisições AJAX de um website. Ao entrar em um website e pressionar F12, você verá uma janela com diversas informações sobre um website.</h2>
+        <figure>
+          <img src="img_1.webp" alt="blog image 1" id="img_1_original">
+          <figcaption style="text-align: center;">Inspecionar Elemento Aberto Na Página Inicial do SoundCloud</figcaption>
+        </figure>
+        <h2 class="normal">Dentro do inspecionar elemento temos diversas abas, no caso do web scraping as duas mais importantes são elementos e network. A primeira nos permite obter informações sobre o HTML, como classes, id e outras tags. A segunda nos permite obter informações sobre as requisições feitas pelo website, incluindo os headers e outras informações adicionais. Com isso podemos simular a mesma requisição e então obter o mesmo tipo de dado que o website oficial obteve.</h2>
+        <h2>Investigando Uma Música</h2>
+        <h2 class="normal">Agora iremos usar do inspecionar elemento para investigar informações sobre uma música, mas antes de tudo precisamos saber quais informações são do HTML nativo, e quais são dinamicamente atualizadas por AJAX. Para isso iremos desativar o Javascript nas configurações de websites.</h2>
+        <figure>
+          <img src="img_2.webp" alt="blog image 2" id="img_2_original">
+          <figcaption style="text-align: center;">Página De Uma Música Do SoundCloud Após Desativar O Javascript.</figcaption>
+        </figure>
+        <h2 class="normal">Como esperado a página quebra, sem o Javascript o SoundCloud não consegue streamar a música para o usuário, entretanto temos muitas informações sobre a música entre no HTML, temos o título, criador, capa e até data de publicação, essas informações são relevantes pois iremos usá-las nos metadados da música depois que baixarmos ela.</h2>
+        <h2 class="normal">Se observarmos no inspecionar elemento veremos uma tag script que possui todas as informações da música na página.</h2>
+        <figure>
+          <img src="img_3.webp" alt="blog image 3" id="img_3_original">
+          <figcaption style="text-align: center;">Tag Script Com Informações Sobre A Música</figcaption>
+        </figure>
+        <h2 class="normal">Como podemos ver existe bastante informação nessa tag, mas, se observamos com cuidado, podemos perceber que isto é uma variável com um array de objetos JSON. Para simplificar só precisaremos do ultimo JSON no array, nele obtemos todas informações necessárias sobre a música.</h2>
+        <figure>
+          <img src="img_4.png" alt="blog image 4" id="img_4_original">
+        </figure>
+        <h2 class="normal">Acima você vê os dados da música simplificado, esses dados serão usados para baixar a música e inserir metadados, alguns dados podem não existir em todas as músicas então devemos sempre testar nosso projeto para saber se ele está funcionando corretamente. Uma atenção extra para a propriedade “media”, nela podemos ver o “transcodings” da nossa música, no próximo artigo iremos explorar sobre o protocolo HLS que o SoundCloud utiliza no streaming de música. Antes de terminar vamos acessar o url dos “transcodings”.</h2>
+        <figure>
+          <img src="img_5.webp" alt="blog image 5" id="img_5_original">
+        </figure>
+        <h2 class="normal">O link que estamos tentando acessar é da API do SoundCloud, e para usar a API precisamos de uma autorização, infelizmente na data deste artigo o SoundCloud não está aceitando pedidos de acesso para sua API. Com isso devemos procurar outra forma de acessar este link, para isso vamos usar a aba network do inspecionar elemento.</h2>
+        <figure>
+          <img src="img_6.webp" alt="blog image 6" id="img_6_original">
+        </figure>
+        <h2 class="normal">Aqui podemos ver uma chamada pro mesmo link que acabamos de acessar, nesse caso a chamada foi feita pelo próprio website. Se olharmos com atenção veremos mais informações no link, o link completo possui um client_id e um track_authorization, mas, só precisamos do client_id para acessar o link. Agora vamos acessar o link denovo só que adicionando o client_id.</h2>
+        <figure>
+          <img src="img_7.webp" alt="blog image 7" id="img_7_original">
+        </figure>
+        <h2 class="normal">Agora obtivemos um objeto JSON com outro link, bem por enquanto é só isso no próximo artigo veremos sobre HLS e streaming.</h2>
+        <h2 class="normal">Artigo no <a href="https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-3-investigando-o-website-6c6608c4d67e" target="_blank" rel="noopener noreferrer">Medium</a></h2>
+        <p></p>
+      </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee/gitfolio" target="_blank">Made With Gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

@@ -1,6 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
+.normal {
+  font-weight: normal !important;
+}
+
+#blog h2, #blog h2 a, #blog figcaption a {
+  color: white !important;
+}
+
+#blog figure {
+  width: 100%;
+  margin: 2vh auto;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0, 0.08);
+  max-width: 700px;
+  display: block;
+}
+
+ul li::marker, ol li::marker {
+  font-size: 1.5em;
+}
+
 body {
   margin: 0%;
   padding: 0%;
@@ -177,9 +198,11 @@ body {
 
 #blog img {
   width: 100%;
-  margin: 2vh 0px;
+  margin: 2vh auto;
   border-radius: 5px;
   border: 1px solid rgb(0, 0, 0, 0.08);
+  max-width: 700px;
+  display: block;
 }
 
 #header {
@@ -525,11 +548,19 @@ body {
   }
 
   #blog img {
-    margin: 1vh 0px !important;
+    margin: 1vh auto;
+    max-width: 500px;
+    display: block;
   }
 
   #blog p {
     margin: 2vh 0px;
+  }
+
+  #blog figure {
+    margin: 1vh auto;
+    max-width: 500px;
+    display: block;
   }
 }
 

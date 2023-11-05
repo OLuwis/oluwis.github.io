@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Criando uma API GraphQL com Java Spring Boot — Parte 7: Validação com Apache Commons e Passay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Criando uma API GraphQL com Java Spring Boot — Parte 7: Validação com Apache Commons e Passay</h1>
+      <h2 id="blog_sub_title">Neste artigo iremos implementar validação de email e senha, usando as bibliotecas do Passay e Apache Commons Validator.</h2>
+      <div id="blog">
+        <figure>
+          <img src="img_0.webp" alt="blog image 0" id="img_0_original">
+          <figcaption style="text-align: center;">Apache Logo</figcaption>
+        </figure>
+        <p id="para_3_original"></p>
+        <h2>Validação</h2>
+        <h2 class="normal">Uns dos aspectos mais importantes na criação de softwares, é integridade de dados, isso permite que dados corrompidos, ou dados inválidos não possam ser utilizados, pois isso danificaria o sistema, com isso a validação se tornar um aspecto importante e necessário na inserção de novos dados. A validação checa e filtra possíveis dados inválidos, e assim retorna um erro explicando a razão e a possível solução necessária.</h2>
+        <h2>Apache Commons</h2>
+        <h2 class="normal">Apache é uma empresa não-lucrativa, com o proposito de criar e distribuir software de licença livre. Uns do projetos que citamos neste artigo, é o Apache Commons, que é focado em criar componentes Java reutilizáveis para os desenvolvedores. Um dos componentes que iremos usar na nossa API, é o “Validator”, nesta biblioteca temos vários tipos de validadores, mas estamos neste artigo utilizaremos somente o de email. Abaixo um exemplo do Apache Commons Validator.</h2>
+        <figure>
+          <img src="img_1.webp" alt="blog image 1" id="img_1_original">
+          <figcaption style="text-align: center;">Exemplo de uso do Apache Commons Email Validator.</figcaption>
+        </figure>
+        <h2>Passay</h2>
+        <h2 class="normal">Passay é uma biblioteca para validação de senhas, com ela podemos definir diversos tipos de regras diferentes, abaixo temos um exemplo de uma validação com regras que seguem o padrão de muitos websites.</h2>
+        <figure>
+          <img src="img_2.webp" alt="blog image 2" id="img_2_original">
+          <figcaption style="text-align: center;">Exemplo de uso do Passay.</figcaption>
+        </figure>
+        <h2>Implementando validação na nossa API</h2>
+        <h2 class="normal">Primeiramente vamos adicionar os validadores ao contexto do Spring através de Beans.</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/74b5968a83fde17d11c468ba56070cf3.js"></script>
+          <figcaption style="text-align: center;">Exemplo de criação dos validadores.</figcaption>
+        </figure>
+        <h2 class="normal">Agora iremos usá-los em nossos controladores.</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/613e71c5b58189086f5dd39d4eb20c21.js"></script>
+          <figcaption style="text-align: center;">Exemplo de implementação dos validadores.</figcaption>
+        </figure>
+        <h2 class="normal">Chegamos ao fim do artigo, abaixo deixarei links relacionado ao tópico do artigo.</h2>
+        <ol>
+          <li>
+            <h2 class="normal"><a href="https://commons.apache.org/proper/commons-validator/" target="_blank" rel="noopener noreferrer">Apache Commons Validator — commons.apache.org</a></h2>
+          </li>
+          <li>
+            <h2 class="normal"><a href="https://www.passay.org/" target="_blank" rel="noopener noreferrer">Passay — passay.org</a></h2>
+          </li>
+        </ol>
+        <h2 class="normal">Artigo no <a href="https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-7-valida%C3%A7%C3%A3o-com-apache-commons-e-passay-b050c910a61c" target="_blank" rel="noopener noreferrer">Medium</a></h2>
+        <p></p>
+      </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee/gitfolio" target="_blank">Made With Gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

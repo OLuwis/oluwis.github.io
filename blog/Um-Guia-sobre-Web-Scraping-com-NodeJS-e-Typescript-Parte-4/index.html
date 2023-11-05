@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 4 — HLS e Streaming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 4 — HLS e Streaming</h1>
+      <h2 id="blog_sub_title">Neste artigo iremos aprender sobre o protocolo de streaming HLS, Http Live Streaming.</h2>
+      <div id="blog">
+        <figure>
+          <img src="img_0.jpg" alt="blog image 0" id="img_0_original">
+          <figcaption style="text-align: center;">Fonte: <a href="https://www.linkedin.com/pulse/principais-protocolos-envolvidos-na-distribui%C3%A7%C3%A3o-de-em-cardoso-pitta/?originalSubdomain=pt" target="_blank" rel="noopener noreferrer">linkedin.com/pulse/principais-protocolos-envolvidos-na-distribui%C3%A7%C3%A3o-de-em-cardoso-pitta/</a></figcaption>
+        </figure>
+        <p id="para_3_original"></p>
+        <h2 class="normal">No ultimo artigo, nós investigamos o website que usaríamos no nosso web scraping. Com isso descobrimos diversos links que são utilizados para streamar o conteúdo ao usuário. Nesse artigo iremos aprofundar e entender sobre o protocolo de streaming utilizado no website.</h2>
+        <h2>O que é HLS?</h2>
+        <h2 class="normal">HLS é um protocolo de live streaming criado pela Apple, e amplamente utilizado para streaming ao vivo e sob demanda. O protocolo HLS divide o conteúdo em partes menores, e transfere eles através de uma conexão HTTP, que então é baixado e reproduzido pelo usuário final.</h2>
+        <figure>
+          <img src="img_1.jpg" alt="blog image 1" id="img_1_original">
+          <figcaption style="text-align: center;">Fonte: <a href="https://bitmovin.com/apple-http-live-streaming-hls/" target="_blank" rel="noopener noreferrer">bitmovin.com/apple-http-live-streaming-hls/</a></figcaption>
+        </figure>
+        <h2 class="normal">Os arquivos que carregam as partes do HLS possuem extensão .m3u8, os arquivos m3u8 podem ser lidos como um arquivo de texto comum, dentro dele possuem vários links que representam uma parte do conteúdo, no caso do SoundCloud cada links é uma parte da música total.</h2>
+        <h2 class="normal">No ultimo artigo terminamos acessando o link HLS, que nos retornou um objeto JSON com outro link, ao abrirmos o link em um navegador, é automaticamente baixado um arquivo .m3u8 com o nome de playlist, ao abrirmos o arquivo como texto, conseguimos diversos links para as partes do áudio, e também informações relacionadas ao tempo de duração de cada parte.</h2>
+        <figure>
+          <img src="img_2.webp" alt="blog image 2" id="img_2_original">
+        </figure>
+        <h2 class="normal">E chegamos ao fim do nosso artigo, no próximo artigo codaremos a primeira parte do nosso scraper. Abaixo deixarei alguns links relevantes ao tópico.</h2>
+        <ol>
+          <li>
+            <h2 class="normal">
+              <a href="https://www.cloudflare.com/pt-br/learning/video/what-is-http-live-streaming/" target="_blank" rel="noopener noreferrer">O que é o HTTP Live Streaming? — cloudflare.com</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="normal">
+              <a href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming" target="_blank" rel="noopener noreferrer">HTTP Live Streaming — wikipedia.org</a>
+            </h2>
+          </li>
+        </ol>
+        <h2 class="normal">Artigo no <a href="https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-4-hls-e-streaming-68bb50d65639" target="_blank" rel="noopener noreferrer">Medium</a></h2>
+        <p></p>
+      </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee/gitfolio" target="_blank">Made With Gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

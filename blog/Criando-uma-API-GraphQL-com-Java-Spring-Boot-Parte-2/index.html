@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Criando uma API GraphQL com Java Spring Boot — Parte 2: GraphQL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Criando uma API GraphQL com Java Spring Boot — Parte 2: GraphQL</h1>
+      <h2 id="blog_sub_title">Nesse artigo criaremos a base da nossa API através do esquema GraphQL.</h2>
+      <div id="blog">
+        <figure>
+          <img src="img_0.webp" alt="blog image 0" id="img_0_original">
+          <figcaption style="text-align: center;">GraphQL Types.</figcaption>
+        </figure>
+        <p id="para_3_original"></p>
+        <h2>SDL</h2>
+        <h2 class="normal">As API GraphQL são definidas através de arquivos escritos em SDL ou Schema Definition Language (Linguagem de Definição de Esquema), esses arquivos normalmente possuem a extensão .graphql ou .gql, já no caso das API feitas em Java com Spring Boot, nós utilizamos a extensão .graphqls ou .gqls.</h2>
+        <h2>Schemas</h2>
+        <h2 class="normal">Os esquemas em GraphQL são o que definem o comportamento da API, elas decidem os dados necessários para uma requisição e também definem os tipos de dados que podem ser retornados, por isso APIs GraphQL são conhecidas por serem auto-documentadas, essa base também permite um melhor controle de informações e maior velocidade em requisiçoes.</h2>
+        <h2>Types</h2>
+        <h2 class="normal">As APIs GraphQL são construídas através de um sistema de tipagens, essas são scalar, object, operation, enum, interfaces, inputs e unions. Iremos cobrir todas elas exceto enum, interfaces e unions, já que não as utilizaremos nesta API. Fique á vontade para pesquisar sobre eles caso tenha interesse.</h2>
+        <h2>Scalars</h2>
+        <h2 class="normal">Scalars são tipos que definem uma estrutura de dados em GraphQL, os tipos nativos são ID, String, Boolean, Int e Float. Dentre esses também temos tipos scalar customizados, eles normalmente extendem a base de tipos nativos do GraphQL, alguns exemplo são os Date, Time, DateTime e UUID.</h2>
+        <figure>
+          <img src="img_1.webp" alt="blog image 1" id="img_1_original">
+          <figcaption style="text-align: center;">Exemplo de tipos Scalars em GraphQL.
+          </figcaption>
+        </figure>
+        <h2>Objects</h2>
+        <h2 class="normal">Objects são tipagens que definem o a base de nosso esquema, vamos usar de exemplo a imagem abaixo, no caso dela “Usuário” é o objeto que define um tipo, esse tipo pode ser reutilizado depois em outros codigos. Dentro desse objeto nos temos também os fields (campos), e eles são o nome, altura, idade, e etc. Esses campos definem um tipo scalar, ou podem definir outros tipos de objeto dentro deles, isso diz pra nossa API, qual tipo é esperado receber e retornar.</h2>
+        <figure>
+          <img src="img_2.webp" alt="blog image 2" id="img_2_original">
+          <figcaption style="text-align: center;">Exemplo de tipos Objects em GraphQL.
+          </figcaption>
+        </figure>
+        <h2>Operations</h2>
+        <h2 class="normal">Operations são tipagens nativas do GraphQL que definem métodos de requisição na API, existem atualmente três operações nativas em GraphQL, elas são Query, Mutation e Subscription. Query é usado para buscar informação, Mutation é usado para modificar informação, Subscription é uma Query em tempo real, normalmente feita através de uma conexão WebSocket. Dentro da operações podemos criar métodos para manusear nossa API, esses métodos definem parâmetros que devemos inserir, e também definem os tipos de dados para retornar.</h2>
+        <figure>
+          <img src="img_3.webp" alt="blog image 3" id="img_3_original">
+          <figcaption style="text-align: center;">Exemplo de tipos Operations em GraphQL.
+          </figcaption>
+        </figure>
+        <h2>Inputs</h2>
+        <h2 class="normal">Inputs são tipagens usadas para simplificar parâmetros de operações, inputs não podem ser utilizados como objetos de retorno em métodos.</h2>
+        <figure>
+          <img src="img_4.webp" alt="blog image 4" id="img_4_original">
+          <figcaption style="text-align: center;">Exemplo de tipos Inputs em GraphQL.
+          </figcaption>
+        </figure>
+        <h2>Null</h2>
+        <h2 class="normal">Todos os exemplos mostrados neste artigo possuem uma coisa em comum, isso é a falta de controle sobre valores nulos, nas APIs GraphQL podemos definir se um valor é opcional ou obrigatório, no caso de um valor ser obrigatório qualquer operação feita sem ele dará erro, o mesmo vale se retornar nulo um campo que é não-nulo. Para forçar um valor adicionamos “!” no final de um campo.</h2>
+        <figure>
+          <img src="img_5.webp" alt="blog image 5" id="img_5_original">
+          <figcaption style="text-align: center;">Exemplo de um Schema não nulo em GraphQL.
+          </figcaption>
+        </figure>
+        <h2>Criando o Schema de nossa API</h2>
+        <h2 class="normal">Agora finalmente criaremos o esquema de nossa API, isso será o ponto de partida para a funcionalidade de toda nossa API. Criaremos três arquivos que são schema.graphqls, inputs.graphqls e types.graphqls. Além disso adicionaremos um Scalar customizado do tipo Date, então vamos lá.</h2>
+        <h2>Adicionando tipos Scalar customizados</h2>
+        <h2 class="normal">Sempre que criamos um novo projeto Maven, nós obtemos um arquivo do tipo pom.xml, esse arquivo possui todas as nossas dependências, e podemos adicionar mais caso necessitamos, o que é o este caso. Adicionaremos no nosso pom uma nova dependência.</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/401740dd133bdfb713516ccf6bf6e652.js"></script>
+        </figure>
+        <h2 class="normal">Agora podemos adicionar o tipo Scalar dentro do nosso Schema.graphqls</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/31ccb458c56a4caff45be5c2331c4615.js"></script>
+          <figcaption style="text-align: center;">O tipo Scalar Date é descrito nessa forma “AAAA-MM-DD” ou “1999–09–30”
+          </figcaption>
+        </figure>
+        <h2 class="normal">Quase lá, agora devemos adicionar isso na Runtime do Spring, criaremos uma pasta chamada configs dentro do src/main/java/, lá criamos um arquivo chamado de Beans.java, beans são componentes que o Spring escaneia e adiciona ao seu contexto para poder utilizar depois, dentro do Beans.java, nós criaremos um novo método para adicionar o Scalar no contexto do Spring.</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/b0f45039edfa23a4a12c5e2c1ed45b48.js"></script>
+          <figcaption style="text-align: center;">Adicionando o Scalar ao contexto do Spring ao iniciar a aplicação.
+          </figcaption>
+        </figure>
+        <h2>Definindo o Schema da API</h2>
+        <h2 class="normal">Hora de definirmos o Schema de nossa API, primeiramente criaremos nossos objetos no types.graphqls, definiremos dois tipos “Usuario” e “Tarefa”, atenção ao campos obrigatórios e também usamos os tipos Scalar customizados que adicionamos.</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/008a1d634bf6f9b79f8cf3254f4d95ea.js"></script>
+        </figure>
+        <h2 class="normal">Agora precisamos definir o resto do nosso Schema.graphqls, criaremos as nossas Queries e Mutations para a API.</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/dcd60d8aea1a409e68289dc9bf93291b.js"></script>
+        </figure>
+        <h2 class="normal">Agora criaremos os Inputs para nossas Queries e Mutations.</h2>
+        <figure>
+          <script src="https://gist.github.com/OLuwis/1ddfab4ba1f7a375227056256b1c5dc8.js"></script>
+        </figure>
+        <h2 class="normal">E acabamos por aqui, depois desse longo artigo eu espero que tenha conseguido entender GraphQL e seu sistema de tipagem, abaixo deixareis alguns links que ajudaram ou estão relacionado a esse artigo. Na próxima parte começaremos a modelar nossa base de dados.</h2>
+        <ol>
+          <li>
+            <h2 class="normal">
+              <a href="https://www.redhat.com/pt-br/topics/api/what-is-graphql" target="_blank" rel="noopener noreferrer">Como usar GraphQL? — redhat.com</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="normal">
+              <a href="https://docs.github.com/pt/graphql/guides/introduction-to-graphql#graphql-terminology" target="_blank" rel="noopener noreferrer">Terminologia do GraphQL — github.com</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="normal">
+              <a href="https://graphql.org/learn/schema/" target="_blank" rel="noopener noreferrer">Schema and Types — graphql.org</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="normal">
+              <a href="https://www.apollographql.com/docs/apollo-server/schema/schema/" target="_blank" rel="noopener noreferrer">GraphQL Schema Basics — apollographql.com</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="normal">
+              <a href="https://www.howtographql.com/basics/2-core-concepts/" target="_blank" rel="noopener noreferrer">GraphQL Core Concepts — howtographql.com</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="normal">
+              <a href="https://www.digitalocean.com/community/conceptual-articles/understanding-the-graphql-type-system" target="_blank" rel="noopener noreferrer">Understanding the GraphQL Type System — digitalocean.com</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="normal">
+              <a href="https://dgraph.io/docs/graphql/schema/" target="_blank" rel="noopener noreferrer">GraphQL Schema — dgraph.io</a>
+            </h2>
+          </li>
+        </ol>
+        <h2 class="normal">Artigo no <a href="https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-2-graphql-300ff83a3d16" target="_blank" rel="noopener noreferrer">Medium</a></h2>
+        <p></p>
+      </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee/gitfolio" target="_blank">Made With Gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
