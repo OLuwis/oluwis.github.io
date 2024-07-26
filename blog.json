@@ -1,107 +1,107 @@
 [
     {
-        "url_title": "Um-Guia-sobre-Web-Scraping-com-NodeJS-e-Typescript-Parte-7",
+        "url_title": "https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-7-criando-um-script-npx-07feada147e0",
         "title": "Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 7 — Criando Um Script NPX",
         "sub_title": "Neste artigo transformaremos nosso projeto em um script NPX, scripts npx podem ser utilizados sem a necessidade de instalação.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*hdy_H9xHLMYwsxrw.png",
         "visible": true
     },
     {
-        "url_title": "Um-Guia-sobre-Web-Scraping-com-NodeJS-e-Typescript-Parte-6",
+        "url_title": "https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-6-criando-um-scraper-de-playlist-91739bbbff45",
         "title": "Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 6 — Criando Um Scraper De Playlist",
         "sub_title": "Neste artigo criaremos o scraper de músicas em uma playlist do SoundCloud.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*juGbdiNbft7FjztV.jpg",
         "visible": true
     },
     {
-        "url_title": "Um-Guia-sobre-Web-Scraping-com-NodeJS-e-Typescript-Parte-5",
+        "url_title": "https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-5-criando-um-scraper-de-m%C3%BAsica-6026739454bf",
         "title": "Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 5 — Criando Um Scraper De Música",
         "sub_title": "Neste artigo criaremos o scraper de música do nosso projeto para baixar e escrever metadados nele.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*oNwXH-xVkB8kqPXi.jpg",
         "visible": true
     },
     {
-        "url_title": "Um-Guia-sobre-Web-Scraping-com-NodeJS-e-Typescript-Parte-4",
+        "url_title": "https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-4-hls-e-streaming-68bb50d65639",
         "title": "Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 4 — HLS e Streaming",
         "sub_title": "Neste artigo iremos aprender sobre o protocolo de streaming HLS, Http Live Streaming.",
-        "top_image": "img_0.jpg",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*FqEvGt-jQwDHw3Bo",
         "visible": true
     },
     {
-        "url_title": "Um-Guia-sobre-Web-Scraping-com-NodeJS-e-Typescript-Parte-3",
+        "url_title": "https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-3-investigando-o-website-6c6608c4d67e",
         "title": "Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 3 — Investigando O Website",
         "sub_title": "Neste artigo investigaremos o site do SoundCloud para entendermos como funciona.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*-CJ4nMaZN1QJDkAU.png",
         "visible": true
     },
     {
-        "url_title": "Um-Guia-sobre-Web-Scraping-com-NodeJS-e-Typescript-Parte-2",
+        "url_title": "https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-2-iniciando-o-projeto-f4acf5222de5",
         "title": "Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 2 — Iniciando O Projeto",
         "sub_title": "Neste artigo iremos configurar o nosso ambiente de desenvolvimento Node e Typescript.",
-        "top_image": "img_0.svg",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*owEC7YMiLHyib85X",
         "visible": true
     },
     {
-        "url_title": "Um-Guia-sobre-Web-Scraping-com-NodeJS-e-Typescript-Parte-1",
+        "url_title": "https://medium.com/@luwis/um-guia-sobre-web-scraping-com-nodejs-e-typescript-parte-1-introdu%C3%A7%C3%A3o-dcbed6eee7ab",
         "title": "Um Guia sobre Web Scraping com NodeJS e Typescript: Parte 1 — Introdução",
         "sub_title": "Bem vindos ao primeiro artigo sobre Web Scraping com NodeJS e Typescript, neste artigos iremos abordar sobre o conceito de Web Scraping.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*B0RT5Xd63A33de_8lyz1sg.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-8",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-8-retornando-erros-8a3ffba15080",
         "title": "Criando uma API GraphQL com Java Spring Boot — Parte 8: Retornando Erros",
         "sub_title": "Neste artigo aprenderemos a entregar erros personalizados da nossa API.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*KdI4ZBKs4dr6XSU1.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-7",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-7-valida%C3%A7%C3%A3o-com-apache-commons-e-passay-b050c910a61c",
         "title": "Criando uma API GraphQL com Java Spring Boot — Parte 7: Validação com Apache Commons e Passay",
         "sub_title": "Neste artigo iremos implementar validação de email e senha, usando as bibliotecas do Passay e Apache Commons Validator.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/0*Gtv4aiKK6EOMhc6e.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-6",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-6-servi%C3%A7os-c85850b2d835",
         "title": "Criando uma API GraphQL com Java Spring Boot — Parte 6: Serviços",
         "sub_title": "Neste artigo criaremos os serviços que gerenciará a nossa API e nosso banco de dados.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*0iZ53oqlZkYlgdHO_PE-ew.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-5",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-5-controladores-1a96652eec6b",
         "title": "Criando uma API GraphQL com Java Spring Boot — Parte 5: Controladores",
         "sub_title": "Neste artigo explicaremos sobre controladores no Spring Boot, e seus mapeamentos com GraphQL.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*u-enFhnxJD57U-XkDmuX6w.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-4",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-4-spring-security-e-jwt-1ad47d1a0a3b",
         "title": "Criando uma API GraphQL com Java Spring Boot — Parte 4: Spring Security e JWT",
         "sub_title": "Neste artigo iremos configurar o sistema de autenticação e autorização da nossa API, usando o Spring Security.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:640/format:webp/0*_OoCYZXMf7DNZqci.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-3",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-3-spring-data-jpa-18a9ca5cd28e",
         "title": "Criando uma API GraphQL com Java Spring Boot—Parte 3: Spring Data JPA",
         "sub_title": "Nesse artigo vamos explorar a estrutura de dados da nossa API, e a sua comunicação com a base de dados.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*4egayQCk2UjP_44ZKy8nZg.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-2",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-2-graphql-300ff83a3d16",
         "title": "Criando uma API GraphQL com Java Spring Boot — Parte 2: GraphQL",
         "sub_title": "Nesse artigo criaremos a base da nossa API através do esquema GraphQL.",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kqGyI1NMV01Ea-V43w5ssw.png",
         "visible": true
     },
     {
-        "url_title": "Criando-uma-API-GraphQL-com-Java-Spring-Boot-Parte-1",
+        "url_title": "https://medium.com/@luwis/criando-uma-api-graphql-com-java-spring-boot-parte-1-introdu%C3%A7%C3%A3o-7b7b334e3710",
         "title": "Criando uma API GraphQL com Java Spring Boot — Parte 1: Introdução",
         "sub_title": "Bem-vindos ao primeiro artigo da série que te ensinará a construir uma API GraphQL com Java e Spring Boot. Mas antes de tudo o que é GraphQL?",
-        "top_image": "img_0.webp",
+        "top_image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*T4x-7hDVPZs2wG59gB7yVg.png",
         "visible": true
     }
 ]
