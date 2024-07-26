@@ -1,18 +1,16 @@
 [
- {
-  "username": "OLuwis",
-  "name": "Luis Miguel",
-  "userimg": "https://avatars.githubusercontent.com/u/109117221?v=4",
-  "sort": "star",
-  "order": "desc",
-  "includeFork": false,
-  "theme": "dark.css",
-  "types": [
-   "owner"
-  ],
-  "linkedin": "luismiguelreis",
-  "twitter": null,
-  "medium": null,
-  "dribbble": null
- }
+  {
+   "username": "OLuwis",
+   "name": "Luis Miguel",
+   "userimg": "https://avatars.githubusercontent.com/u/109117221?v=4",
+   "sort": "created",
+   "order": "desc",
+   "includeFork": false,
+   "theme": "dark.css",
+   "types": [
+    "all"
+   ],
+   "linkedin": "luismiguelreis",
+   "medium": "luwis"
+  }
 ]
