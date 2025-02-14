@@ -22,7 +22,7 @@ function BadgeList({ className, badges }: BadgeListProps) {
   return (
     <ul
       className={cn("inline-flex list-none gap-x-1 p-0", className)}
-      aria-label="Technologies used"
+      aria-label="Tecnologias usadas"
     >
       {badges.map((badge) => (
         <li key={badge}>
@@ -50,9 +50,9 @@ function WorkPeriod({ start, end }: WorkPeriodProps) {
   return (
     <div
       className="text-sm tabular-nums text-gray-500"
-      aria-label={`Employment period: ${start} to ${end ?? "Present"}`}
+      aria-label={`Período de trabalho: ${start} até ${end ?? "Atual"}`}
     >
-      {start} - {end ?? "Present"}
+      {start} - {end ?? "Atual"}
     </div>
   );
 }
@@ -72,7 +72,7 @@ function CompanyLink({ company, link }: CompanyLinkProps) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${company} company website`}
+      aria-label={`Site da empresa ${company}`}
     >
       {company}
     </a>
@@ -136,7 +136,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
   return (
     <Section>
       <h2 className="text-xl font-bold" id="work-experience">
-        Work Experience
+        Experiência Profissional
       </h2>
       <div className="space-y-4 print:space-y-0" role="feed" aria-labelledby="work-experience">
         {work && work.map((item) => (

@@ -16,7 +16,7 @@ function EducationPeriod({ start, end }: EducationPeriodProps) {
   return (
     <div
       className="text-sm tabular-nums text-gray-500"
-      aria-label={`Period: ${start} to ${end}`}
+      aria-label={`Período: ${start} até ${end}`}
     >
       {start} - {end}
     </div>
@@ -70,7 +70,7 @@ export function Education({ education }: EducationListProps) {
   return (
     <Section>
       <h2 className="text-xl font-bold" id="education-section">
-        Education
+        Formações
       </h2>
       <div
         className="space-y-4"

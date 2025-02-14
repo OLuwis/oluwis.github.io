@@ -12,12 +12,12 @@ export default function App() {
       id="main-content"
     >
       <div className="sr-only">
-        <h1>{RESUME_DATA.name}&apos;s Resume</h1>
+        <h1>CV - {RESUME_DATA.name}</h1>
       </div>
 
       <section
         className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4"
-        aria-label="Resume Content"
+        aria-label="Conteúdo do currículo"
       >
         <Header />
 

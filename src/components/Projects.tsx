@@ -25,12 +25,12 @@ function ProjectLink({ title, link }: ProjectLinkProps) {
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1 hover:underline"
-        aria-label={`${title} project (opens in new tab)`}
+        aria-label={`Projeto ${title} (abre em uma nova aba)`}
       >
         {title}
         <span
           className="size-1 rounded-full bg-green-500"
-          aria-label="Active project indicator"
+          aria-label="Indicador de projeto ativo"
         />
       </a>
       <div
@@ -56,7 +56,7 @@ function ProjectTags({ tags }: ProjectTagsProps) {
   return (
     <ul
       className="mt-2 flex list-none flex-wrap gap-1 p-0"
-      aria-label="Technologies used"
+      aria-label="Tecnologias usadas"
     >
       {tags.map((tag) => (
         <li key={tag}>
@@ -95,7 +95,7 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
           </CardTitle>
           <CardDescription
             className="text-pretty font-mono text-xs print:text-[10px]"
-            aria-label="Project description"
+            aria-label="Descrição do projeto"
           >
             {description}
           </CardDescription>
@@ -117,7 +117,7 @@ export function Projects({ projects }: ProjectsProps) {
   return (
     <Section className="print-force-new-page scroll-mb-16 print:space-y-4 print:pt-12">
       <h2 className="text-xl font-bold" id="side-projects">
-        Side projects
+        Projetos
       </h2>
       <div
         className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3"

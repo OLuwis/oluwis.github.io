@@ -15,7 +15,7 @@ function LocationLink({ location, locationLink }: LocationLinkProps) {
       <p className="max-w-md items-center text-pretty font-mono text-xs text-foreground">
         <span
           className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-          aria-label={`Location: ${location}`}
+          aria-label={`Localização: ${location}`}
         >
           <GlobeIcon className="size-3" aria-hidden="true" />
           {location}
@@ -31,7 +31,7 @@ function LocationLink({ location, locationLink }: LocationLinkProps) {
         href={locationLink}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Location: ${location}`}
+        aria-label={`Localização: ${location}`}
       >
         <GlobeIcon className="size-3" aria-hidden="true" />
         {location}
@@ -71,13 +71,13 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
     <div
       className="flex gap-x-1 pt-1 font-mono text-sm text-foreground/80 print:hidden"
       role="list"
-      aria-label="Contact links"
+      aria-label="Links de contato"
     >
       {personalWebsiteUrl && (
         <SocialButton
           href={personalWebsiteUrl}
           icon={GlobeIcon}
-          label="Personal website"
+          label="Site pessoal"
         />
       )}
       {contact.email && (
@@ -91,7 +91,7 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
         <SocialButton
           href={`tel:${contact.tel}`}
           icon={PhoneIcon}
-          label="Phone"
+          label="Telefone"
         />
       )}
       {contact.socials.map((social) => (
@@ -115,7 +115,7 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
   return (
     <div
       className="hidden gap-x-2 font-mono text-sm text-foreground/80 print:flex print:text-[12px]"
-      aria-label="Print contact information"
+      aria-label="Imprimir informação de contato"
     >
       {personalWebsiteUrl && (
         <>
@@ -186,7 +186,7 @@ export function Header() {
 
       <Avatar className="size-28" aria-hidden="true">
         <AvatarImage
-          alt={`${RESUME_DATA.name}'s profile picture`}
+          alt={`Foto de perfil de ${RESUME_DATA.name}`}
           src={RESUME_DATA.avatarUrl}
         />
         <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
