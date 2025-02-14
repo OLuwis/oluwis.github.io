@@ -1,14 +1,7 @@
-import {
-  ClevertechLogo,
-  ConsultlyLogo,
-  JojoMobileLogo,
-  MonitoLogo,
-  NSNLogo,
-  ParabolLogo,
-} from "@/components/logos";
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { Resume } from "@/data/type";
 
-export const SAMPLE_DATA = {
+export const SAMPLE_DATA: Resume = {
   name: "Bartosz Jarocki",
   initials: "BJ",
   location: "Wrocław, Poland, CET",
@@ -28,7 +21,7 @@ export const SAMPLE_DATA = {
   contact: {
     email: "bartosz.jarocki@hey.com",
     tel: "+48530213401",
-    social: [
+    socials: [
       {
         name: "GitHub",
         url: "https://github.com/BartoszJarocki",
@@ -39,14 +32,9 @@ export const SAMPLE_DATA = {
         url: "https://www.linkedin.com/in/bjarocki/",
         icon: LinkedInIcon,
       },
-      {
-        name: "X",
-        url: "https://x.com/BartoszJarocki",
-        icon: XIcon,
-      },
     ],
   },
-  education: [
+  educations: [
     {
       school: "Wrocław University of Technology",
       degree: "Bachelor's Degree in Control systems engineering and Robotics",
@@ -54,15 +42,13 @@ export const SAMPLE_DATA = {
       end: "2010",
     },
   ],
-  work: [
+  works: [
     {
       company: "Film.io",
       link: "https://film.io",
       badges: ["Remote", "React", "Next.js", "TypeScript", "Node.js"],
       title: "Software Architect",
-      logo: ConsultlyLogo,
       start: "2024",
-      end: null,
       description: (
         <>
           Leading technical architecture of a blockchain-based film funding
@@ -95,7 +81,6 @@ export const SAMPLE_DATA = {
         "Tailwind CSS",
       ],
       title: "Senior Full Stack Developer",
-      logo: ParabolLogo,
       start: "2021",
       end: "2024",
       description: (
@@ -123,7 +108,6 @@ export const SAMPLE_DATA = {
       link: "https://clevertech.biz",
       badges: ["Remote", "React", "TypeScript", "Node.js", "Android", "Kotlin"],
       title: "Lead Android Developer → Full Stack Developer",
-      logo: ClevertechLogo,
       start: "2015",
       end: "2021",
       description: (
@@ -152,7 +136,6 @@ export const SAMPLE_DATA = {
       link: "https://bsgroup.eu/",
       badges: ["On Site", "Android", "Java", "Kotlin"],
       title: "Android Developer → Lead Android Developer",
-      logo: JojoMobileLogo,
       start: "2012",
       end: "2015",
       description: (
@@ -174,7 +157,6 @@ export const SAMPLE_DATA = {
       link: "https://www.nokia.com",
       badges: ["On Site", "C/C++", "LTE", "Agile"],
       title: "C/C++ Developer",
-      logo: NSNLogo,
       start: "2010",
       end: "2012",
       description:
@@ -200,7 +182,6 @@ export const SAMPLE_DATA = {
       techStack: ["TypeScript", "Next.js", "Browser Extension", "PostgreSQL"],
       description:
         "Browser extension for debugging web applications. Includes taking screenshots, screen recording, E2E tests generation and generating bug reports",
-      logo: MonitoLogo,
       link: {
         label: "monito.dev",
         href: "https://monito.dev/",
@@ -220,7 +201,6 @@ export const SAMPLE_DATA = {
       ],
       description:
         "Platform for online consultations with real-time video meetings and scheduling",
-      logo: ConsultlyLogo,
       link: {
         label: "consultly.com",
         href: "https://consultly.com/",
@@ -231,11 +211,10 @@ export const SAMPLE_DATA = {
       techStack: ["TypeScript", "Next.js", "Tailwind CSS"],
       description:
         "An open source minimalist, print friendly CV template with a focus on readability and clean design. >9k stars on GitHub",
-      logo: MonitoLogo,
       link: {
         label: "Minimalist CV",
         href: "https://github.com/BartoszJarocki/cv",
       },
     },
   ],
-} as const;
+}

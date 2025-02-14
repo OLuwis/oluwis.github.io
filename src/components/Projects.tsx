@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import { SAMPLE_DATA } from "@/data/sample";
+import { Resume } from "@/data/type";
 
 type ProjectTags = readonly string[];
 
@@ -108,9 +108,7 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
   );
 }
 
-interface ProjectsProps {
-  projects: (typeof SAMPLE_DATA)["projects"];
-}
+type ProjectsProps = { projects: Resume["projects"] }
 
 /**
  * Section component displaying all side projects

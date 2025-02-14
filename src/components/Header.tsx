@@ -1,14 +1,29 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
-import { SAMPLE_DATA } from "@/data/sample";
+import { Resume } from "@/data/type";
+import { RESUME_DATA } from "@/data/resume";
 
 interface LocationLinkProps {
-  location: typeof SAMPLE_DATA.location;
-  locationLink: typeof SAMPLE_DATA.locationLink;
+  location: Resume["location"];
+  locationLink: Resume["locationLink"];
 }
 
 function LocationLink({ location, locationLink }: LocationLinkProps) {
+  if (!locationLink) {
+    return (
+      <p className="max-w-md items-center text-pretty font-mono text-xs text-foreground">
+        <span
+          className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+          aria-label={`Location: ${location}`}
+        >
+          <GlobeIcon className="size-3" aria-hidden="true" />
+          {location}
+        </span>
+      </p>
+    )
+  }
+
   return (
     <p className="max-w-md items-center text-pretty font-mono text-xs text-foreground">
       <a
@@ -47,7 +62,7 @@ function SocialButton({ href, icon: Icon, label }: SocialButtonProps) {
 }
 
 interface ContactButtonsProps {
-  contact: typeof SAMPLE_DATA.contact;
+  contact: Resume["contact"];
   personalWebsiteUrl?: string;
 }
 
@@ -79,7 +94,7 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
           label="Phone"
         />
       )}
-      {contact.social.map((social) => (
+      {contact.socials.map((social) => (
         <SocialButton
           key={social.name}
           href={social.url}
@@ -92,7 +107,7 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
 }
 
 interface PrintContactProps {
-  contact: typeof SAMPLE_DATA.contact;
+  contact: Resume["contact"];
   personalWebsiteUrl?: string;
 }
 
@@ -144,37 +159,37 @@ export function Header() {
     <header className="flex items-center justify-between">
       <div className="flex-1 space-y-1.5">
         <h1 className="text-2xl font-bold" id="resume-name">
-          {SAMPLE_DATA.name}
+          {RESUME_DATA.name}
         </h1>
         <p
           className="max-w-md text-pretty font-mono text-sm text-foreground/80 print:text-[12px]"
           aria-labelledby="resume-name"
         >
-          {SAMPLE_DATA.about}
+          {RESUME_DATA.about}
         </p>
 
         <LocationLink
-          location={SAMPLE_DATA.location}
-          locationLink={SAMPLE_DATA.locationLink}
+          location={RESUME_DATA.location}
+          locationLink={RESUME_DATA.locationLink}
         />
 
         <ContactButtons
-          contact={SAMPLE_DATA.contact}
-          personalWebsiteUrl={SAMPLE_DATA.personalWebsiteUrl}
+          contact={RESUME_DATA.contact}
+          personalWebsiteUrl={RESUME_DATA.personalWebsiteUrl ?? ""}
         />
 
         <PrintContact
-          contact={SAMPLE_DATA.contact}
-          personalWebsiteUrl={SAMPLE_DATA.personalWebsiteUrl}
+          contact={RESUME_DATA.contact}
+          personalWebsiteUrl={RESUME_DATA.personalWebsiteUrl ?? ""}
         />
       </div>
 
       <Avatar className="size-28" aria-hidden="true">
         <AvatarImage
-          alt={`${SAMPLE_DATA.name}'s profile picture`}
-          src={SAMPLE_DATA.avatarUrl}
+          alt={`${RESUME_DATA.name}'s profile picture`}
+          src={RESUME_DATA.avatarUrl}
         />
-        <AvatarFallback>{SAMPLE_DATA.initials}</AvatarFallback>
+        <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
       </Avatar>
     </header>
   );

@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import { SAMPLE_DATA } from "@/data/sample";
+import { Resume } from "@/data/type";
 import { cn } from "@/lib/utils";
 
-type WorkExperience = (typeof SAMPLE_DATA)["work"][number];
+type WorkExperience = Resume["works"][number];
 type WorkBadges = readonly string[];
 
 interface BadgeListProps {
@@ -125,7 +125,7 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
 }
 
 interface WorkExperienceProps {
-  work: (typeof SAMPLE_DATA)["work"];
+  work: Resume["works"];
 }
 
 /**
@@ -139,7 +139,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
         Work Experience
       </h2>
       <div className="space-y-4 print:space-y-0" role="feed" aria-labelledby="work-experience">
-        {work.map((item) => (
+        {work && work.map((item) => (
           <article key={`${item.company}-${item.start}`} role="article">
             <WorkExperienceItem work={item} />
           </article>

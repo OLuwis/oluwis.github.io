@@ -1,8 +1,8 @@
 import { Section } from "@/components/ui/section";
-import { SAMPLE_DATA } from "@/data/sample";
+import { Resume } from "@/data/type";
 
 interface AboutProps {
-  summary: typeof SAMPLE_DATA.summary;
+  summary: Resume["summary"];
   className?: string;
 }
 

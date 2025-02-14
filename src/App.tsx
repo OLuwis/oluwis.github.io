@@ -3,8 +3,7 @@ import { Header } from "@/components/Header";
 import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
 import { Summary } from "@/components/Summary";
-import { WorkExperience } from "@/components/WorkExperience";
-import { SAMPLE_DATA } from "@/data/sample";
+import { RESUME_DATA } from "@/data/resume";
 
 export default function App() {
   return (
@@ -13,7 +12,7 @@ export default function App() {
       id="main-content"
     >
       <div className="sr-only">
-        <h1>{SAMPLE_DATA.name}&apos;s Resume</h1>
+        <h1>{RESUME_DATA.name}&apos;s Resume</h1>
       </div>
 
       <section
@@ -23,15 +22,13 @@ export default function App() {
         <Header />
 
         <div className="space-y-8 print:space-y-4">
-          <Summary summary={SAMPLE_DATA.summary} />
+          <Summary summary={RESUME_DATA.summary} />
 
-          <WorkExperience work={SAMPLE_DATA.work} />
+          <Education education={RESUME_DATA.educations} />
 
-          <Education education={SAMPLE_DATA.education} />
+          <Skills skills={RESUME_DATA.skills} />
 
-          <Skills skills={SAMPLE_DATA.skills} />
-
-          <Projects projects={SAMPLE_DATA.projects} />
+          <Projects projects={RESUME_DATA.projects} />
         </div>
       </section>
     </main>

@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
-import { SAMPLE_DATA } from "@/data/sample";
+import { Resume } from "@/data/type";
 
-type Education = (typeof SAMPLE_DATA)["education"][number];
+type Education = Resume["educations"][number]
 
 interface EducationPeriodProps {
   start: Education["start"];
