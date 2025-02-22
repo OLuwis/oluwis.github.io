@@ -7,10 +7,10 @@ export const RESUME_DATA: Resume = {
   location: "Salvador, BA - Brasil",
   locationLink: "",
   about:
-    "Desenvolvedor Full-Stack focado em criar produtos escaláveis e de alta qualidade.",
+    "Desenvolvedor Web Full-Stack focado em criar produtos escaláveis e de alta qualidade.",
   summary: (
     <>
-      Desenvolvedor Full-Stack com conhecimento em múltiplas plataformas de desenvolvimento, focado em construir interfaces de alta qualidade no Front-End com React e Angular, e sistemas escaláveis no Back-End com Node, Java, C#, Ruby e Python.
+      Desenvolvedor Web Full-Stack com conhecimento em múltiplas plataformas de desenvolvimento, focado em construir interfaces de alta qualidade no Front-End com React e Angular, e sistemas escaláveis no Back-End com Node, Java, C#, Ruby e Python.
     </>
   ),
   avatarUrl: "https://avatars.githubusercontent.com/u/109117221?v=4",
@@ -54,8 +54,8 @@ export const RESUME_DATA: Resume = {
     "Node.js/Express",
     "Python",
     "Ruby/Rails",
-    "PostgreSQL/SQLite",
-    "MongoDB",
+    "Postgres/SQLite",
+    "MongoDb",
     "Redis",
     "Docker",
     "Git/Github Actions",
