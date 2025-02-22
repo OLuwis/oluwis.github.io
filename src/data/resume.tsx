@@ -54,7 +54,7 @@ export const RESUME_DATA: Resume = {
     "Node.js/Express",
     "Python",
     "Ruby/Rails",
-    "Postgres/SQLite",
+    "Postgres/Sqlite",
     "MongoDb",
     "Redis",
     "Docker",
