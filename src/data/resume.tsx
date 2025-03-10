@@ -85,7 +85,7 @@ export const RESUME_DATA: Resume = {
       },
     },
     {
-      title: "FutBot",
+      title: "Fut Bot",
       techStack: ["Ruby", "Docker"],
       description:
         "Bot do Telegram para consultar jogos de futebol feito com Ruby.",
