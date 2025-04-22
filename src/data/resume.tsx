@@ -7,10 +7,14 @@ export const RESUME_DATA: Resume = {
   location: "Salvador, BA - Brasil",
   locationLink: "",
   about:
-    "Desenvolvedor Web Full-Stack focado em criar produtos escaláveis e de alta qualidade.",
+    "Desenvolvedor de Software focado em criar produtos escaláveis e de alta qualidade.",
   summary: (
     <>
-      Desenvolvedor Web Full-Stack com conhecimento em múltiplas plataformas de desenvolvimento, focado em construir interfaces de alta qualidade no Front-End com React e Angular, e sistemas escaláveis no Back-End com Node, Java, C#, Ruby e Python.
+      Desenvolvedor de software com grande interesse em tecnologia e programação. Tenho estudado e praticado tecnologias como React, Angular, C#, Java, Docker e Git, desenvolvendo projetos pessoais e participando de cursos e comunidades da área.
+
+      Busco minha primeira oportunidade profissional para aplicar meus conhecimentos, aprender com profissionais experientes e crescer junto com um time de tecnologia. Tenho facilidade para aprender, sou proativo e gosto de trabalhar em equipe.
+
+      Aberto a estágios, oportunidades júnior e programas de trainee na área de desenvolvimento.
     </>
   ),
   avatarUrl: "https://avatars.githubusercontent.com/u/109117221?v=4",
