@@ -12,7 +12,9 @@ export const RESUME_DATA: Resume = {
     <>
       Desenvolvedor de software com grande interesse em tecnologia e programação. Tenho estudado e praticado tecnologias como React, Angular, C#, Java, Docker e Git, desenvolvendo projetos pessoais e participando de cursos e comunidades da área.
       <br/>
+      <br/>
       Busco minha primeira oportunidade profissional para aplicar meus conhecimentos, aprender com profissionais experientes e crescer junto com um time de tecnologia. Tenho facilidade para aprender, sou proativo e gosto de trabalhar em equipe.
+      <br/>
       <br/>
       Aberto a estágios, oportunidades júnior e programas de trainee na área de desenvolvimento.
     </>
