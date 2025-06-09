@@ -22,8 +22,8 @@ export const RESUME_DATA: Resume = {
   avatarUrl: "https://avatars.githubusercontent.com/u/109117221?v=4",
   personalWebsiteUrl: "",
   contact: {
-    email: "oluismrs@gmail.com",
-    tel: "+5571999048090",
+    email: "contato.luismiguelreis@gmail.com",
+    tel: "71999048090",
     socials: [
       {
         name: "GitHub",
